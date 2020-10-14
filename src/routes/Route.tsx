@@ -35,8 +35,6 @@ const Route: React.FC<RouteProps> = ({
   if(token){
     var {exp} = jwt_decode(token);
     var dateNow = Date.now() / 1000;
-    console.log(dateNow)
-    console.log(exp)
 
     if(exp < dateNow) {
       signOut();

@@ -46,7 +46,6 @@ const StudentProfessionalExperiences: React.FC = () => {
     async function getProfissionalExperiences() {
       try {
         const response = await api.get('/students-profissional-experiences');
-        console.log(response.data);
         setExperiences(response.data);
       } catch (error) {}
     }

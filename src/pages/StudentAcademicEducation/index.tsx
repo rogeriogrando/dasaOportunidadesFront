@@ -137,7 +137,7 @@ const StudentAcademicEducation: React.FC = () => {
           'Data de Conclusão/Previsão obrigatório',
         ),
       }).defined();
-      console.log(id);
+
       let response;
       if (!id) {
         response = await api.post('/students-academic-education', {

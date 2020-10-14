@@ -54,7 +54,7 @@ const Profile: React.FC = () => {
         description: 'Sua senha foi alterada com sucesso.',
       });
     } catch (err) {
-      console.log(err);
+
       if (err instanceof Yup.ValidationError) {
         const errors = getValidationErros(err);
         formRef.current?.setErrors(errors);

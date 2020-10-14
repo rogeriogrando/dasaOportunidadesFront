@@ -50,8 +50,6 @@ const ResetPassword: React.FC = () => {
         const { password, confirmPass } = data;
         const token = location.pathname.replace('/reset-password/', '');
 
-        console.log(token);
-
         if (!token) {
           throw new Error();
         }

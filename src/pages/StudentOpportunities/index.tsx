@@ -119,7 +119,6 @@ const StudentOpportunities: React.FC = () => {
       setDialog(true);
       const { data } = await api.get('/student-jobs/' + id);
 
-      console.log(data);
       setCompanyJobsId(id);
       setJobExist(data.push.jobExist);
       setCompany(data.company.name);
@@ -219,7 +218,7 @@ const StudentOpportunities: React.FC = () => {
         minimumAge: minimumAgeSave,
         maximumAge: maximumAgeSave,
       });
-console.log(emailCompany)
+
 
       await api.post('/student-send-curriculum', {
         companyJobsId,

@@ -9,7 +9,7 @@ const ActivateAccount: React.FC = () => {
     async function getAcademicEducation() {
       try {
         const token = window.location.pathname.split('/')[2];
-        console.log(token);
+
         await api.put(`/activateaccount/${token}`);
       } catch (error) {}
     }

@@ -42,12 +42,17 @@ const SignUpStudents: React.FC = () => {
               'Permitido apena e-mail institucional @faesb.edu.br',
             ),
           pass: Yup.string().min(6, 'No mínimo 6 dígitos'),
+          confirmPass: Yup.string().oneOf(
+            [Yup.ref('pass'), 'null'],
+            'As senhas estão diferentes',
+          ),
         });
 
         await schema.validate(data, {
           abortEarly: false,
         });
-        await api.post('/users', data);
+        const {name, email, pass} = data;
+        await api.post('/users', {name, email, pass});
         history.push('/');
 
         addToast({
@@ -91,6 +96,12 @@ const SignUpStudents: React.FC = () => {
               icon={FiLock}
               type="password"
               placeholder="Senha"
+            />
+            <Input
+              name="confirmPass"
+              icon={FiLock}
+              type="password"
+              placeholder="Confirmação"
             />
             <Button type="submit">Cadastrar</Button>
           </Form>

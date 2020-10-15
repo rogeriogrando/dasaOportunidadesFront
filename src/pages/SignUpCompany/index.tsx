@@ -40,6 +40,10 @@ const SignUpCompany: React.FC = () => {
             .required('E-mail obrigatório')
             .email('Digite um e-mail válido'),
           pass: Yup.string().min(6, 'No mínimo 6 dígitos'),
+          confirmPass: Yup.string().oneOf(
+            [Yup.ref('pass'), 'null'],
+            'As senhas estão diferentes',
+          ),
         });
 
         await schema.validate(data, {
@@ -86,6 +90,12 @@ const SignUpCompany: React.FC = () => {
             />
             <Input name="email" icon={FiMail} placeholder="E-mail" />
             <Input name="pass" icon={FiLock} type="password" placeholder="Senha" />
+            <Input
+              name="confirmPass"
+              icon={FiLock}
+              type="password"
+              placeholder="Confirmação"
+            />
             <Button type="submit">Cadastrar</Button>
           </Form>
           <Link to="/">

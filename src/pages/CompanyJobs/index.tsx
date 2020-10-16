@@ -194,6 +194,12 @@ const CompanyJobs: React.FC = () => {
 
 
       let response;
+      const newApplicationDeadline =
+        applicationDeadline.substr(3, 2) +
+        '/' +
+        applicationDeadline.substr(0, 2) +
+        '/' +
+        applicationDeadline.substr(6, 4);
       if (!id) {
         response = await api.post('/company-jobs', {
           office,
@@ -206,7 +212,7 @@ const CompanyJobs: React.FC = () => {
           desirable,
           minimumAge,
           maximumAge,
-          applicationDeadline,
+          applicationDeadline: newApplicationDeadline,
           active,
         });
       } else {
@@ -221,7 +227,7 @@ const CompanyJobs: React.FC = () => {
           desirable,
           minimumAge,
           maximumAge,
-          applicationDeadline,
+          applicationDeadline: newApplicationDeadline,
           active,
         });
       }

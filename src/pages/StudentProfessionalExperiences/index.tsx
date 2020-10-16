@@ -22,12 +22,12 @@ import api from '../../services/api';
 
 const StudentProfessionalExperiences: React.FC = () => {
   const { signOut, user } = useAuth();
-  const [id, setId] = useState('');
+  const [id, setId] = useState();
   const [company, setCompany] = useState('');
   const [office, setOffice] = useState('');
   const [admissionDate, setAdmissionDate] = useState('');
   const [resignationDate, setResignationDate] = useState('');
-  const [reasonDismissal, setReasonDismissal] = useState('');
+  const [reasonDismissal, setReasonDismissal] = useState<string | undefined>('');
   const [salary, setSalary] = useState(0);
   const [developedActivities, setDevelopedActivities] = useState('');
   const [experiencesDialog, setExperiencesDialog] = useState(false);
@@ -45,14 +45,34 @@ const StudentProfessionalExperiences: React.FC = () => {
     }
     async function getProfissionalExperiences() {
       try {
-        const response = await api.get('/students-profissional-experiences');
-        setExperiences(response.data);
+        const {data} = await api.get('/students-profissional-experiences');
+        data.map( (items: any)  => {
+          const newAdmissionDate =
+            items.admissionDate.substr(8, 2) +
+            '/' +
+            items.admissionDate.substr(5, 2) +
+            '/' +
+            items.admissionDate.substr(0, 4);
+            items.admissionDate = newAdmissionDate;
+          if(items.resignationDate) {
+            const newResignationDate =
+              items.resignationDate.substr(8, 2) +
+              '/' +
+              items.resignationDate.substr(5, 2) +
+              '/' +
+              items.resignationDate.substr(0, 4);
+              items.resignationDate = newResignationDate;
+          }
+
+        })
+        setExperiences(data);
       } catch (error) {}
     }
     getProfissionalExperiences();
   }, [experiencesLoad]);
 
   function hideDialog() {
+    setId(undefined);
     setCompany('');
     setOffice('');
     setAdmissionDate('');
@@ -100,24 +120,10 @@ const StudentProfessionalExperiences: React.FC = () => {
       developedActivities,
     } = rowData;
     setId(id);
-    const admissionDateFormat =
-      admissionDate.substr(8, 2) +
-      '/' +
-      admissionDate.substr(5, 2) +
-      '/' +
-      admissionDate.substr(0, 4);
-
-    const resignationDateFormat =
-      resignationDate.substr(8, 2) +
-      '/' +
-      resignationDate.substr(5, 2) +
-      '/' +
-      resignationDate.substr(0, 4);
-
     setCompany(company);
     setOffice(office);
-    setAdmissionDate(admissionDateFormat);
-    setResignationDate(resignationDateFormat);
+    setAdmissionDate(admissionDate);
+    setResignationDate(resignationDate);
     setReasonDismissal(reasonDismissal);
     setSalary(salary);
     setDevelopedActivities(developedActivities);

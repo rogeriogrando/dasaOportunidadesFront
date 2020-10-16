@@ -8,6 +8,9 @@ import { Container } from './styles';
 import { useToast } from '../../hooks/toast';
 import * as Yup from 'yup';
 import { useHistory } from 'react-router-dom';
+import { Dropdown } from 'primereact/dropdown';
+
+import Cities from '../../components/Cities/cities';
 
 import Header from '../../components/HeaderStudent';
 import getValidationErros from '../../utils/getValidationErros';
@@ -96,6 +99,7 @@ const StudentAddress: React.FC = () => {
     }
   }
 
+
   return (
     <>
       <Header end={<h3>Bem vindo: {user.name} </h3>}></Header>
@@ -142,20 +146,8 @@ const StudentAddress: React.FC = () => {
                   <span className="p-inputgroup-addon">
                     <FiMap />
                   </span>
-                  <InputText
-                    value={city}
-                    onChange={e => setCity(e.currentTarget.value)}
-                    placeholder="Cidade"
-                    className={!city ? 'p-invalid p-d-block' : ''}
-                  />
-                  <span className="p-inputgroup-addon">UF</span>
-                  <InputText
-                    value={uf}
-                    maxlength="2"
-                    onChange={e => setUF(e.currentTarget.value.toUpperCase())}
-                    placeholder="UF"
-                    className={!uf ? 'p-invalid p-d-block' : ''}
-                  />
+                  <Dropdown value={city} options={Cities} onChange={ e => setCity(e.value) } optionLabel="name" placeholder="Select a City" />
+
                 </div>
               </div>
 

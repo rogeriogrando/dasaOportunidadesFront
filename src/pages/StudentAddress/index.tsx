@@ -162,7 +162,7 @@ const StudentAddress: React.FC = () => {
               <Button
                 className="button"
                 type="submit"
-                label="Grava >> Sessão Formação"
+                label="Gravar >> Sessão Formação"
                 icon="pi pi-save"
                 iconPos="right"
               />

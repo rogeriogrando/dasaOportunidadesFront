@@ -212,7 +212,7 @@ const StudentAcademicEducation: React.FC = () => {
             <Button
               className="button-next"
               type="submit"
-              label="Grava >> Sessão Conhecimentos Adicionais"
+              label="Gravar >> Sessão Conhecimentos Adicionais"
               icon="pi pi-save"
               iconPos="right"
               onClick={nextItem}
@@ -253,7 +253,7 @@ const StudentAcademicEducation: React.FC = () => {
             />
           </div>
           <div className="p-field">
-            <label htmlFor="description">Ano inicial</label>
+            <label htmlFor="description">Ano de início</label>
             <InputMask
               mask="9999"
               value={initialYear}

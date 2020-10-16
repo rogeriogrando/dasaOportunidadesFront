@@ -320,7 +320,7 @@ const StudentPersonalData: React.FC = () => {
               <Button
                 className="button"
                 type="submit"
-                label="Grava >> Sessão Endereço"
+                label="Gravar >> Sessão Endereço"
                 icon="pi pi-save"
                 iconPos="right"
               />

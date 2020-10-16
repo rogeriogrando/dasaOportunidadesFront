@@ -1,11 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { FiPhone, FiBookmark, FiCpu, FiUserPlus } from 'react-icons/fi';
 import { Form } from '@rocketseat/unform';
 import { FormHandles } from '@unform/core';
 import { InputText } from 'primereact/inputtext';
-import { InputMask } from 'primereact/inputmask';
 import { Dropdown } from 'primereact/dropdown';
-import { InputNumber } from 'primereact/inputnumber';
 import { Button } from 'primereact/button';
 import { Container } from './styles';
 import { useToast } from '../../hooks/toast';
@@ -23,7 +20,12 @@ const StudentAdditionalTraining: React.FC = () => {
   const [inglesLevel, setInglesLevel] = useState('');
   const [espanholLevel, setEspanholLevel] = useState('');
   const [othersLevel, setOthersLevel] = useState('');
+  const [others, setOthers] = useState('');
+  const [excelLevel, setExcelLevel] = useState('');
+  const [wordLevel, setWordLevel] = useState('');
+  const [powerPointLevel, setPowerPointLevel] = useState('');
   const [computerLevel, setComputerLevel] = useState('');
+  const [computer, setComputer] = useState('');
   const { addToast } = useToast();
   const history = useHistory();
 
@@ -40,7 +42,12 @@ const StudentAdditionalTraining: React.FC = () => {
           setInglesLevel(data.inglesLevel);
           setEspanholLevel(data.espanholLevel);
           setOthersLevel(data.othersLevel);
+          setOthers(data.others);
+          setExcelLevel(data.excelLevel);
+          setWordLevel(data.wordLevel);
+          setPowerPointLevel(data.powerPointLevel);
           setComputerLevel(data.computerLevel);
+          setComputer(data.computer);
         }
       } catch (error) {}
     }
@@ -63,14 +70,24 @@ const StudentAdditionalTraining: React.FC = () => {
           inglesLevel,
           espanholLevel,
           othersLevel,
+          others,
+          excelLevel,
+          wordLevel,
+          powerPointLevel,
           computerLevel,
+          computer,
         });
       } else {
         await api.post('/students-additional-training', {
           inglesLevel,
           espanholLevel,
           othersLevel,
+          others,
+          excelLevel,
+          wordLevel,
+          powerPointLevel,
           computerLevel,
+          computer,
         });
       }
       addToast({
@@ -93,6 +110,7 @@ const StudentAdditionalTraining: React.FC = () => {
     }
   }
   const levelList = [
+    { label: 'Selecione um nível', value: '' },
     { label: 'Não', value: 'Não' },
     { label: 'Razoável', value: 'Razoável' },
     { label: 'Bom', value: 'Bom' },
@@ -119,7 +137,7 @@ const StudentAdditionalTraining: React.FC = () => {
                     setInglesLevel(e.value);
                   }}
                   placeholder="Selecione um nível"
-                  className={!inglesLevel ? 'p-invalid p-d-block' : ''}
+                  className={!inglesLevel || inglesLevel === '' ? 'p-invalid p-d-block' : ''}
                 />
               </div>
             </div>
@@ -132,11 +150,16 @@ const StudentAdditionalTraining: React.FC = () => {
                   setEspanholLevel(e.value);
                 }}
                 placeholder="Selecione um nível"
-                className={!espanholLevel ? 'p-invalid p-d-block' : ''}
+                className={!espanholLevel || espanholLevel === '' ? 'p-invalid p-d-block' : ''}
               />
             </div>
             <div className="p-inputgroup">
-              <span className="p-inputgroup-addon">Outros</span>
+
+              <InputText
+                    value={others}
+                    onChange={e => setOthers(e.currentTarget.value)}
+                    placeholder="Outros"
+              />
               <Dropdown
                 value={othersLevel}
                 options={levelList}
@@ -144,7 +167,6 @@ const StudentAdditionalTraining: React.FC = () => {
                   setOthersLevel(e.value);
                 }}
                 placeholder="Selecione um nível"
-                className={!othersLevel ? 'p-invalid p-d-block' : ''}
               />
             </div>
 
@@ -154,17 +176,54 @@ const StudentAdditionalTraining: React.FC = () => {
               </span>
 
               <div className="p-inputgroup">
-                <span className="p-inputgroup-addon">
-                  <FiCpu />
-                </span>
+                <span className="p-inputgroup-addon">Word</span>
+                <Dropdown
+                  value={wordLevel}
+                  options={levelList}
+                  onChange={e => {
+                    setWordLevel(e.value);
+                  }}
+                  placeholder="Selecione um nível"
+                  className={!wordLevel || wordLevel === '' ? 'p-invalid p-d-block' : ''}
+                />
+              </div>
+              <div className="p-inputgroup">
+                <span className="p-inputgroup-addon">Excel</span>
+                <Dropdown
+                  value={excelLevel}
+                  options={levelList}
+                  onChange={e => {
+                  setExcelLevel(e.value);
+                }}
+                  placeholder="Selecione um nível"
+                  className={!excelLevel || excelLevel === '' ? 'p-invalid p-d-block' : ''}
+                />
+              </div>
+              <div className="p-inputgroup">
+                <span className="p-inputgroup-addon">Power Point</span>
+                <Dropdown
+                  value={powerPointLevel}
+                  options={levelList}
+                  onChange={e => {
+                  setPowerPointLevel(e.value);
+                }}
+                  placeholder="Selecione um nível"
+                  className={!powerPointLevel || powerPointLevel === '' ? 'p-invalid p-d-block' : ''}
+                />
+              </div>
+              <div className="p-inputgroup">
+                <InputText
+                  value={computer}
+                  onChange={e => setComputer(e.currentTarget.value)}
+                  placeholder="Outros"
+                />
                 <Dropdown
                   value={computerLevel}
                   options={levelList}
                   onChange={e => {
-                    setComputerLevel(e.value);
+                  setComputerLevel(e.value);
                   }}
                   placeholder="Selecione um nível"
-                  className={!computerLevel ? 'p-invalid p-d-block' : ''}
                 />
               </div>
             </div>
@@ -172,7 +231,7 @@ const StudentAdditionalTraining: React.FC = () => {
           <Button
             className="button-next"
             type="submit"
-            label="Grava >> Sessão Experiências Profissionais"
+            label="Gravar >> Sessão Experiências Profissionais"
             icon="pi pi-save"
             iconPos="right"
           />

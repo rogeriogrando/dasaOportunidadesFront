@@ -24,7 +24,6 @@ const StudentAddress: React.FC = () => {
   const [number, setNumber] = useState('');
   const [neighborHood, setNeighborHood] = useState('');
   const [city, setCity] = useState('');
-  const [uf, setUF] = useState('');
   const { addToast } = useToast();
   const history = useHistory();
 
@@ -42,7 +41,6 @@ const StudentAddress: React.FC = () => {
           setNumber(data.number);
           setNeighborHood(data.neighborHood);
           setCity(data.city);
-          setUF(data.uf);
         }
       } catch (error) {}
     }
@@ -57,7 +55,6 @@ const StudentAddress: React.FC = () => {
         number: Yup.string().required('Número obrigatório'),
         neighborHood: Yup.string().required('Bairro obrigatório'),
         city: Yup.string().required('Cidade obrigatória'),
-        uf: Yup.string().required('UF Obrigatório'),
       }).defined();
 
       const { data } = await api.get('/students-address');
@@ -67,7 +64,6 @@ const StudentAddress: React.FC = () => {
           number,
           neighborHood,
           city,
-          uf,
         });
       } else {
         await api.post('/students-address', {
@@ -75,7 +71,6 @@ const StudentAddress: React.FC = () => {
           number,
           neighborHood,
           city,
-          uf,
         });
       }
 

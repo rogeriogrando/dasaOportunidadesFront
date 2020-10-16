@@ -56,6 +56,7 @@ const StudentAddress: React.FC = () => {
         neighborHood: Yup.string().required('Bairro obrigatório'),
         city: Yup.string().required('Cidade obrigatória'),
       }).defined();
+      console.log(city)
 
       const { data } = await api.get('/students-address');
       if (data) {
@@ -141,7 +142,7 @@ const StudentAddress: React.FC = () => {
                   <span className="p-inputgroup-addon">
                     <FiMap />
                   </span>
-                  <Dropdown value={city} options={Cities} onChange={ e => setCity(e.value) } optionLabel="name" placeholder="Select a City" />
+                  <Dropdown value={city} options={Cities} onChange={ e => setCity(e.value.name) } optionLabel="name" placeholder="Select a City" />
 
                 </div>
               </div>

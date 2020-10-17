@@ -36,6 +36,7 @@ const StudentAddress: React.FC = () => {
     async function getPersonalData() {
       try {
         const { data } = await api.get('/students-address');
+        console.log(data)
         if (data) {
           setStreet(data.street);
           setNumber(data.number);
@@ -64,14 +65,14 @@ const StudentAddress: React.FC = () => {
           street,
           number,
           neighborHood,
-          city,
+          city: city,
         });
       } else {
         await api.post('/students-address', {
           street,
           number,
           neighborHood,
-          city,
+          city: city,
         });
       }
 
@@ -95,6 +96,16 @@ const StudentAddress: React.FC = () => {
     }
   }
 
+  const Cities2  =
+  [
+  {label:'Adolfo',value:'Adolfo'},
+  {label:'Aguaí',value:'Aguaí'},
+  {label:'cada Prata',value:'cada  Prata'},
+]
+
+ function onCityChange(e: any) {
+  setCity(e);
+ }
 
   return (
     <>
@@ -142,8 +153,13 @@ const StudentAddress: React.FC = () => {
                   <span className="p-inputgroup-addon">
                     <FiMap />
                   </span>
-                  <Dropdown value={city} options={Cities} onChange={ e => setCity(e.value.name) } optionLabel="name" placeholder="Select a City" />
-
+                  <Dropdown
+                    value={city}
+                    options={Cities }
+                    onChange={e => { setCity(e.value)}}
+                    placeholder="Selecione um nível"
+                    className={!city || city === '' ? 'p-invalid p-d-block' : ''}
+                  />
                 </div>
               </div>
 

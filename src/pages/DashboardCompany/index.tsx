@@ -31,16 +31,16 @@ const DashboardCompany: React.FC = () => {
 
         <span>
           <p>
-            Em harmonia com a missão da Faesb que abrange o educacional o
-            cultural e o social, o projeto visa proporcional um canal entre
-            alunos, egressos e oportunidades de mercado na região de atuação da
-            Faesb.
+            Em consonância com a missão da FAESB que é educacional, cultural e
+            social, o projeto "Banco de Oportunidades-FAESB" visa proporcionar
+            um canal entre alunos, egressos e oportunidades de mercado na região
+            de atuação da Faesb.
           </p>
           <p>
             O projeto surge como uma ponte para ligar nossos alunos e egressos a
-            oportunidades oferecidas pelas empresas parceiras da Faesb. O
-            projeto também agrega valor para as empresas parceiras na medida em
-            que oferece um banco de dados sólido com mão de obra especializada.
+            oportunidades oferecidas pelas empresas parceiras da Faesb. O projeto
+            também agrega valor para as empresas parceiras na medida em que
+            oferece um banco de dados sólido com mão de obra especializada.
           </p>
         </span>
 

@@ -201,7 +201,7 @@ const StudentAcademicEducation: React.FC = () => {
               rows={3}
               rowsPerPageOptions={[3, 6, 9]}
               paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-              currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
+              currentPageReportTemplate="Exibindo {first} a {last} de {totalRecords} cursos"
             >
               <Column field="institution" header="Instituição"></Column>
               <Column field="description" header="Curso"></Column>

@@ -57,7 +57,7 @@ const SignIn: React.FC = () => {
           type: 'error',
           title: 'Erro na autenticação',
           description:
-            'Ocorreu um ao fazer login, cheque as credenciais e seu email.',
+            'Ocorreu um ao fazer login, cheque as credenciais e seu e-mail.',
         });
       }
     },

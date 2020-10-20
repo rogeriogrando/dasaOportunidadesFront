@@ -255,7 +255,7 @@ const CompanyJobs: React.FC = () => {
               rows={3}
               rowsPerPageOptions={[3, 6, 9]}
               paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-              currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
+              currentPageReportTemplate="Exibindo {first} a {last} de {totalRecords} vagas"
             >
               <Column field="office" header="Cargo" sortable></Column>
               <Column field="applicationDeadline" header="Prazo" sortable></Column>

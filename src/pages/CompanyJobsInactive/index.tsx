@@ -194,6 +194,14 @@ const CompanyJobs: React.FC = () => {
         ),
       }).defined();
 
+
+      const newApplicationDeadline =
+        applicationDeadline.substr(3, 2) +
+        '/' +
+        applicationDeadline.substr(0, 2) +
+        '/' +
+        applicationDeadline.substr(6, 4);
+
       const response = await api.put('/company-jobs-inactive/' + id, {
         office,
         mainAtributions,
@@ -205,7 +213,7 @@ const CompanyJobs: React.FC = () => {
         desirable,
         minimumAge,
         maximumAge,
-        applicationDeadline,
+        applicationDeadline: newApplicationDeadline,
         active,
       });
 

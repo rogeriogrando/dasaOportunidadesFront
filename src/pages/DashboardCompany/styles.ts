@@ -35,7 +35,7 @@ export const Container = styled.div`
     margin-top: 2.6rem;
 
     @media (min-width: 320px) {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       margin-left: 1rem;
       margin-right: 1rem;
     }
@@ -43,7 +43,16 @@ export const Container = styled.div`
       font-size: 2.0rem;
     }
     @media (min-width: 780px) {
+      margin-left: 5rem;
+      margin-right: 5rem;
+      font-size: 2.3rem;
+      line-height: 2.6rem;
+    }
+    @media (min-width: 1900px) {
+      margin-left: 5rem;
+      margin-right: 5rem;
       font-size: 2.6rem;
+      line-height: 2.6rem;
     }
   }
 
@@ -55,10 +64,19 @@ export const Container = styled.div`
       margin-right: 1rem;
     }
     @media (min-width: 500px) {
-      font-size: 2.0rem;
+      font-size: 1.8rem;
     }
     @media (min-width: 780px) {
-      font-size: 2.6rem;
+      margin-left: 5rem;
+      margin-right: 5rem;
+      font-size: 2.0rem;
+      line-height: 2.6rem;
+    }
+    @media (min-width: 1900px) {
+      margin-left: 5rem;
+      margin-right: 5rem;
+      font-size: 2.2rem;
+      line-height: 2.6rem;
     }
   }
   p {
@@ -79,6 +97,12 @@ export const Container = styled.div`
       margin-right: 2rem;
     }
     @media (min-width: 780px) {
+      margin-left: 5rem;
+      margin-right: 5rem;
+      font-size: 1.6rem;
+      line-height: 2.6rem;
+    }
+    @media (min-width: 1900px) {
       margin-left: 5rem;
       margin-right: 5rem;
       font-size: 2.0rem;

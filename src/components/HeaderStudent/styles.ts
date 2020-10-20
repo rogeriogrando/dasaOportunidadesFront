@@ -9,8 +9,11 @@ export const Container = styled.div`
     height: 50px;
     width: 50px;
     margin: 0 auto;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    @media (max-width: 960px) {
+      margin-left: -80px;
+    }
   }
 
   nav {

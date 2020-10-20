@@ -12,7 +12,7 @@ export const Container = styled.div`
     margin-left: 10px;
     margin-right: 10px;
     @media (max-width: 960px) {
-      margin-left: -80px;
+      margin-left: -85px;
     }
   }
 

@@ -53,13 +53,13 @@ const SignUpStudents: React.FC = () => {
         });
         const {name, email, pass} = data;
         await api.post('/users', {name, email, pass});
-        history.push('/');
+        history.push('/dashboard-students-ativacao');
 
         addToast({
           type: 'info',
           title: 'Cadatro realizado com sucesso!!!',
           description:
-            'Conta criada com sucesso. Mandamos um e-mail para ativação!!!',
+            'Mandamos um e-mail para ativação, verifique sua caixa de e-mails',
         });
       } catch (err) {
         if (err instanceof Yup.ValidationError) {

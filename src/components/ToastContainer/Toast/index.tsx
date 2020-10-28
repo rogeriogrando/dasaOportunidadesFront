@@ -24,9 +24,9 @@ const Toast: React.FC<ToastProps> = ({ message, style }) => {
   let timerOut: number;
   useEffect(() => {
     if (message.type === 'info') {
-      timerOut = 10000;
+      timerOut = 60000;
     } else {
-      timerOut = 3000;
+      timerOut = 10000;
     }
     const timer = setTimeout(() => {
       removeToast(message.id);

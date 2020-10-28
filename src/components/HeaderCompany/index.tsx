@@ -40,6 +40,7 @@ const HeaderStudent: React.FC<MenubarPrimeProps> = ({
         },
       ],
     },
+
     {
       label: 'Sair',
       icon: 'pi pi-fw pi-power-off',

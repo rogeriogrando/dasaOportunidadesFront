@@ -51,7 +51,7 @@ const SignUpCompany: React.FC = () => {
         });
 
         await api.post('/companies', data);
-        history.push('/');
+        history.push('/dashboard-company-active');
 
         addToast({
           type: 'info',

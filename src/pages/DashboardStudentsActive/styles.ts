@@ -26,8 +26,9 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   font-weight: 500;
-  text-align: center;
+  text-align: justify;
   animation: ${appearFromLeft} 2s;
+  margin-top: 50px;
 
   h1 {
     text-align: center;

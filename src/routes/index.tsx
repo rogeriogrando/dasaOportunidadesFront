@@ -16,6 +16,9 @@ import StudentAcademicEducation from '../pages/StudentAcademicEducation';
 import StudentAdditionalTraining from '../pages/StudentAdditionalTraining';
 import StudentProfessionalExperiences from '../pages/StudentProfessionalExperiences';
 import StudentOpportunities from '../pages/StudentOpportunities';
+import DashboardStudentsActive from '../pages/DashboardStudentsActive';
+import DashboardCompanyActive from '../pages/DashboardCompanyActive';
+import DashboardAbout from '../pages/DashboardAbout';
 
 import CompanyJobs from '../pages/CompanyJobs';
 import CompanyJobsInactive from '../pages/CompanyJobsInactive';
@@ -25,6 +28,9 @@ import ProfileCompany from '../pages/ProfileCompany';
 const Routes: React.FC = () => (
   <Switch>
     <Route path="/" exact component={SignIn} />
+    <Route path="/dashboard-about" exact component={DashboardAbout}/>
+    <Route path="/dashboard-students-active" exact component={DashboardStudentsActive} />
+    <Route path="/dashboard-company-active" exact component={DashboardCompanyActive} />
     <Route path="/activateaccount" component={ActivateAccount} />
     <Route path="/signupaluno" component={SignUpStudents} />
     <Route path="/signupempresa" component={SignUpCompany} />

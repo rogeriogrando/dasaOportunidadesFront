@@ -57,7 +57,7 @@ const SignIn: React.FC = () => {
           type: 'error',
           title: 'Erro na autenticação',
           description:
-            'Ocorreu um ao fazer login, cheque as credenciais e seu e-mail.',
+            'Ocorreu um ao fazer login, cheque as credenciais e seu e-mail para saber se sua conta foi ativada.',
         });
       }
     },
@@ -87,6 +87,9 @@ const SignIn: React.FC = () => {
           <Link to="/signupempresa">
             <FiLogIn />
             Criar conta empresa
+          </Link>
+          <Link to="/dashboard-about">
+            Sobre
           </Link>
         </AnimationContainer>
       </Content>

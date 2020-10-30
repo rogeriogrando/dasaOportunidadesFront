@@ -39,7 +39,7 @@ const SignUpStudents: React.FC = () => {
             .email('Digite um e-mail válido')
             .matches(
               /^[_A-Za-z0-9-.\\+]+[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@faesb.edu.br$/,
-              'Permitido apena e-mail institucional @faesb.edu.br',
+              'Permitido apenas e-mail institucional @faesb.edu.br',
             ),
           pass: Yup.string().min(6, 'No mínimo 6 dígitos'),
           confirmPass: Yup.string().oneOf(

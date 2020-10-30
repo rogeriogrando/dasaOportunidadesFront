@@ -6,7 +6,7 @@ import { Link  } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 
 
-const DashboardStudentsAtivacao: React.FC = () => {
+const DashboardStudentsActive: React.FC = () => {
 
   return (
     <>
@@ -29,4 +29,4 @@ const DashboardStudentsAtivacao: React.FC = () => {
   );
 };
 
-export default DashboardStudentsAtivacao;
+export default DashboardStudentsActive;

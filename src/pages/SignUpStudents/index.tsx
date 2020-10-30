@@ -53,7 +53,7 @@ const SignUpStudents: React.FC = () => {
         });
         const {name, email, pass} = data;
         await api.post('/users', {name, email, pass});
-        history.push('/dashboard-students-ativacao');
+        history.push('/dashboard-students-active');
 
         addToast({
           type: 'info',

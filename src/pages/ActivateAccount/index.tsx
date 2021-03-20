@@ -27,7 +27,7 @@ const ActivateAccount: React.FC = () => {
           <p>Sua conta foi ativada com sucesso :).</p>
           <p>Click no link a baixo para iniciar sua experiência!!!</p>
           <h2>
-            <Link to="/">Link para iniciar Iniciar</Link>
+            <Link to="/">Link para iniciar</Link>
           </h2>
         </span>
 

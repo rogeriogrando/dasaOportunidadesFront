@@ -92,10 +92,10 @@ export const Container = styled.div`
 
 
     .p-dialog .p-dialog-header {
-      background: #FFEFAB;
+      background: #d3d3d3;
     }
 
     .p-dialog .p-dialog-footer {
-      background: #FFEFAB;
+      background: #d3d3d3;
     }
 `;

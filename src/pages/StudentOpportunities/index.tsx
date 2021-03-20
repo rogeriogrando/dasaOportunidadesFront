@@ -250,9 +250,9 @@ const StudentOpportunities: React.FC = () => {
         <div className="card">
             <Carousel
               value={jobs}
-              numVisible={3}
-              numScroll={1}
-              responsiveOptions={responsiveOptions}
+              numVisible={4}
+              numScroll={4}
+              // responsiveOptions={responsiveOptions}
               className="custom-carousel"
               circular
               autoplayInterval={5000}

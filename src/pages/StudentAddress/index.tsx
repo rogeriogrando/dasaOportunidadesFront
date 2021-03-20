@@ -157,7 +157,7 @@ const StudentAddress: React.FC = () => {
                     value={city}
                     options={Cities }
                     onChange={e => { setCity(e.value)}}
-                    placeholder="Selecione um nível"
+                    placeholder="Cidade"
                     className={!city || city === '' ? 'p-invalid p-d-block' : ''}
                   />
                 </div>

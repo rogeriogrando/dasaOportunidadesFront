@@ -12,10 +12,12 @@ export default createGlobalStyle`
   body {
 
     background: url(${logoImg}) no-repeat center;
+    background-size: cover;
 
 
     color: #333;
     -webkit-font-smoothing: antialiased;
+    background-attachment: fixed;
   }
 
   body, input, button {

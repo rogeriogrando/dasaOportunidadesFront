@@ -178,6 +178,11 @@ const StudentOpportunities: React.FC = () => {
 
   const responsiveOptions = [
     {
+      breakpoint: '5604px',
+      numVisible: 4,
+      numScroll: 4
+    },
+    {
       breakpoint: '1604px',
       numVisible: 4,
       numScroll: 4
@@ -250,9 +255,9 @@ const StudentOpportunities: React.FC = () => {
         <div className="card">
             <Carousel
               value={jobs}
-              numVisible={4}
-              numScroll={4}
-              // responsiveOptions={responsiveOptions}
+              // numVisible={4}
+              // numScroll={1}
+              responsiveOptions={responsiveOptions}
               className="custom-carousel"
               circular
               autoplayInterval={5000}

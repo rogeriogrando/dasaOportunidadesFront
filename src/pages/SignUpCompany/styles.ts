@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { shade } from 'polished';
 
-import signUpEMpresaBackgroundImg from '../../assets/empresas.png';
+import signUpEMpresaBackgroundImg from '../../assets/empresas.jpg';
 
 export const Container = styled.div`
   height: 100vh;
@@ -50,6 +50,8 @@ export const AnimationContainer = styled.div`
 
     h1 {
       margin-bottom: 24px;
+      font-weight: 700;
+      color: #fff;
     }
 
     a {
@@ -64,18 +66,20 @@ export const AnimationContainer = styled.div`
     }
   }
   > a {
-    color: #0e58a4;
+    color: #f4ede8;
     display: flex;
     align-items: center;
-    margin-top: 24px;
+    margin-top: 12px;
     text-decoration: none;
     transition: color 0.2s;
-
-    svg {
-      margin-right: 16px;
-    }
     &:hover {
       color: ${shade(0.2, '#0e58a4')};
+    }
+    svg {
+      border-radius: 50%;
+      font-size: 25px;
+      background-color: #0e58a4;
+      margin-right: 10px;
     }
   }
 `;

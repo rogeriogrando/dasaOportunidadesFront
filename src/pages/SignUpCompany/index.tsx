@@ -82,7 +82,7 @@ const SignUpCompany: React.FC = () => {
         <AnimationContainer>
           <img src={logoImg} alt="Faesb" style={{ width: '150px' }} />
           <Form ref={formRef} onSubmit={handleSubmit}>
-            <h1>Faça seu cadastro</h1>
+            <h1>Empresas</h1>
             <Input
               name="name"
               icon={AiOutlineShop}

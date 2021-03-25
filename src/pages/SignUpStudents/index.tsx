@@ -84,7 +84,7 @@ const SignUpStudents: React.FC = () => {
         <AnimationContainer>
           <img src={logoImg} alt="Faesb" style={{ width: '150px' }} />
           <Form ref={formRef} onSubmit={handleSubmit}>
-            <h1>Apenas para Alunos</h1>
+            <h1>Alunos</h1>
             <Input name="name" icon={FiUser} placeholder="Nome" />
             <Input
               name="email"

@@ -15,13 +15,13 @@ export default createGlobalStyle`
     background-size: cover;
 
 
-    color: #333;
+    color: #fff;
     -webkit-font-smoothing: antialiased;
     background-attachment: fixed;
   }
 
   body, input, button {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
   }
 

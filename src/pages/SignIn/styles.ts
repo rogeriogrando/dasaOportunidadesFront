@@ -1,8 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { shade } from 'polished';
 
-import signInBackgroundImg from '../../assets/biblioteca.jpg';
-
 export const Container = styled.div`
   height: 100vh;
   display: flex;
@@ -14,7 +12,6 @@ export const Content = styled.div`
   align-items: center;
   place-content: center;
   width: 100%;
-  max-width: 700px;
 `;
 
 const appearFromLeft = keyframes`
@@ -46,43 +43,33 @@ export const AnimationContainer = styled.div`
   form {
     margin-top: 10px;
     width: 340px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
     h1 {
       margin-bottom: 24px;
+      font-weight: 700;
+      color: #fff;
     }
 
     a {
       color: #f4ede8;
-      display: block;
+      display: flex;
+      align-items: center;
+      font-weight: bold;
       margin-top: 12px;
       text-decoration: none;
       transition: color 0.2s;
       &:hover {
         color: ${shade(0.2, '#0e58a4')};
       }
+      svg {
+        border-radius: 50%;
+        font-size: 25px;
+        background-color: #3c91df;
+        margin-right: 10px;
+      }
     }
   }
-  > a {
-    color: #0e58a4;
-    display: flex;
-    align-items: center;
-    margin-top: 24px;
-    text-decoration: none;
-    transition: color 0.2s;
-
-    svg {
-      margin-right: 16px;
-    }
-    &:hover {
-      color: ${shade(0.2, '#0E58A4')};
-    }
-  }
-`;
-
-export const Background = styled.div`
-  flex: 1;
-  background: url(${signInBackgroundImg}) no-repeat center;
-  background-size: cover;
-  animation: ${imgOpacity} 1s;
 `;

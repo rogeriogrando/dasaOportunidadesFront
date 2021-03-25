@@ -1,5 +1,5 @@
 import React, { useCallback, useRef } from 'react';
-import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
+import { FiFrown, FiMail, FiLock, FiArrowRight } from 'react-icons/fi';
 import { FormHandles } from '@unform/core';
 import logoImg from '../../assets/logo.png';
 import { Form } from '@unform/web';
@@ -9,7 +9,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 import getValidationErros from '../../utils/getValidationErros';
 
-import { Container, Content, Background, AnimationContainer } from './styles';
+import { Container, Content, AnimationContainer } from './styles';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -67,9 +67,9 @@ const SignIn: React.FC = () => {
     <Container>
       <Content>
         <AnimationContainer>
-          <img src={logoImg} alt="Faesb" style={{ width: '150px' }} />
+          <img src={logoImg} alt="Faesb" style={{ width: '130px' }} />
           <Form ref={formRef} onSubmit={handleSubmit}>
-            <h1>Faça seu login</h1>
+            <h1 style={{ marginLeft: '55px' }}>Faça seu login</h1>
             <Input name="email" icon={FiMail} placeholder="E-mail" />
             <Input
               name="password"
@@ -78,22 +78,24 @@ const SignIn: React.FC = () => {
               placeholder="Senha"
             />
             <Button type="submit">Entrar</Button>
-            <Link to="/forgot-password">Esqueci minha senha :(</Link>
+            <Link to="/forgot-password" style={{ marginLeft: '90px' }}>Esqueci minha senha :(
+
+            </Link>
+              <Link to="/signupaluno">
+            <FiArrowRight />
+              Criar conta aluno
+            </Link>
+            <Link to="/signupempresa">
+              <FiArrowRight />
+                Criar conta empresa
+            </Link>
+            <Link to="/dashboard-about">
+             <FiArrowRight style={{ backgroundColor: '#0e58a4' }} />
+              Saiba mais
+            </Link>
           </Form>
-          <Link to="/signupaluno">
-            <FiLogIn />
-            Criar conta aluno
-          </Link>
-          <Link to="/signupempresa">
-            <FiLogIn />
-            Criar conta empresa
-          </Link>
-          <Link to="/dashboard-about">
-            Sobre
-          </Link>
         </AnimationContainer>
       </Content>
-      <Background />
     </Container>
   );
 };

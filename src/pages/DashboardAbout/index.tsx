@@ -30,43 +30,55 @@ const DashboardAbout: React.FC = () => {
           </p>
         </span>
 
-        <img src={carlaImg} alt="Faesb" />
-        <p>
-          Carla Barreto
-        </p>
 
-        <p>
-          Doutora em Educação Escolar (Linha de pesquisa "Política e Gestão Educacional"), pela UNESP.
-          Mestre em Educação, Área de Fundamentos da Educação, linha de Pesquisa Estado e Política Educacional pela UFSCar.
-          Graduada em Ciências Sociais (Licenciatura e Bacharelado - UNESP).
-          Participou ativamente do projeto viabilizando seu desenvolvimento.
-        </p>
 
-        <img src={celioImg} alt="Faesb" />
-        <p>
-          Célio de Castro
-        </p>
-        <p>
-        	Mestre em Administração pelo Programa de Pós Graduação em Administração (PPGA UNIMEP),
-          possui especialização em Marketing (MBA) - Fundação Getúlio Vargas (2012),
-          graduação em Administração de Empresas - Faculdades Integradas Brasileiras (2007).
-          Idealizador do projeto, contruindo a base de regras de negócio com requisitos funcionais do sistema.
-        </p>
+        <table>
+          <tr>
+            <td><img src={carlaImg} alt="Faesb" />
+            <p className="p-0"> Carla Barreto </p>
 
-        <img src={rogerioImg} alt="Faesb" />
-        <p>
-          Rogério Grando
-        </p>
-        <p>
-          Esp. Banco de Dados Oracle pele IBTA, MBA em Segurança da informação pele VERIS e Ciência da Computação pela Escola de Engenharia de Piracicaba (2006).
-          Desenvolvedor do projeto.
-        </p>
+            </td>
+
+            <td className="t-d-0">
+                <p className="p-1"> Doutora em Educação Escolar (Linha de pesquisa "Política e Gestão Educacional"), pela UNESP.
+                Mestre em Educação, Área de Fundamentos da Educação, linha de Pesquisa Estado e Política Educacional pela UFSCar.
+                Graduada em Ciências Sociais (Licenciatura e Bacharelado - UNESP).
+                Participou ativamente do projeto viabilizando seu desenvolvimento.
+                </p>
+            </td>
+          </tr>
+          <tr>
+            <td><img src={celioImg} alt="Faesb" />
+            <p className="p-0"> Célio de Castro</p>
+
+            </td>
+
+            <td className="t-d-0">
+              <p className="p-1"> Mestre em Administração pelo Programa de Pós Graduação em Administração (PPGA UNIMEP),
+                possui especialização em Marketing (MBA) - Fundação Getúlio Vargas (2012),
+                graduação em Administração de Empresas - Faculdades Integradas Brasileiras (2007).
+                Idealizador do projeto, contruindo a base de regras de negócio com requisitos funcionais do sistema.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td><img src={rogerioImg} alt="Faesb" />
+            <p className="p-0"> Rogério Grando</p>
+
+            </td>
+
+            <td className="t-d-0">
+            <p className="p-1"> Esp. Banco de Dados Oracle pele IBTA, MBA em Segurança da informação pele VERIS e Ciência da Computação pela Escola de Engenharia de Piracicaba (2006).
+                Desenvolvedor do projeto.</p>
+            </td>
+          </tr>
+
+        </table>
+
         <Link to="/">
             <FiArrowLeft />
             Voltar
         </Link>
-
-
       </Container>
 
 

@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import logoImg from '../assets/background.jpg';
+import logoImg from '../assets/background.png';
 
 export default createGlobalStyle`
   * {
@@ -12,6 +12,7 @@ export default createGlobalStyle`
   body {
 
     background: url(${logoImg}) no-repeat center;
+    background-color: #161229;
     background-size: cover;
 
 

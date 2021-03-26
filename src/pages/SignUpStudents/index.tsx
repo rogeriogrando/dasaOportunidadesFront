@@ -89,7 +89,7 @@ const SignUpStudents: React.FC = () => {
             <Input
               name="email"
               icon={FiMail}
-              placeholder="E-mail Intiutcional @faesb.edu.br"
+              placeholder="E-mail Institucional @faesb.edu.br"
             />
             <Input
               name="pass"

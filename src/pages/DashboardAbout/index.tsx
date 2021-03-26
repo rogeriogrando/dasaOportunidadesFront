@@ -4,7 +4,7 @@ import { FiArrowLeft } from 'react-icons/fi';
 
 import { Container } from './styles';
 import logoImg from '../../assets/logo.png';
-import carlaImg from '../../assets/carla_so.jpeg';
+import carlaImg from '../../assets/carla_so.jpg';
 import celioImg from '../../assets/celio_so.jpeg';
 import rogerioImg from '../../assets/rogerio_so.jpg';
 
